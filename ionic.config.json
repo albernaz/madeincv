@@ -1,0 +1,8 @@
+{
+  "name": "madeincv",
+  "app_id": "e1f2fb20",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
