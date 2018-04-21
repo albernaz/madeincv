@@ -1,0 +1,47 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Contacto</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<form [formGroup]="contact" (ngSubmit)="doSubmit()">
+		<ion-list>
+			<ion-item>
+				<ion-label color="primary" floating>Su Nombre</ion-label>
+				<ion-input formControlName="name"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label color="primary" floating>Su e-mail</ion-label>
+				<ion-input formControlName="email"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label color="primary" floating>Assunto</ion-label>
+				<ion-input formControlName="subject"></ion-input>
+			</ion-item>
+			<ion-item>
+	    		<ion-textarea formControlName="message" placeholder="Su mensaje"></ion-textarea>
+	  		</ion-item>
+	  		<ion-item>
+	  			<button ion-button outline type="submit" [disabled]="!contact.valid">Enviar</button>
+	  		</ion-item>
+		</ion-list>
+	</form>
+
+	<p>En cumplimiento de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de carácter personal, le informamos que los datos personales que usted nos proporcione a resultas de esta comunicación, serán incorporados a un fichero inscrito en la Agencia Española de Protección de Datos, responsabilidad de APEHA. Usted puede ejercer en todo momento sus derechos de Acceso, Rectificación, Cancelación u Oposición, dirigiéndose por escrito a la ASOCIACION PROVINCIAL DE EMPRESARIOS DE HOSTELERÍA DE ALICANTE, calle Orense, 10, C.P. 03003 de Alicante.</p>
+
+	<footer padding-top>
+		<ion-grid>
+			<ion-row>
+				<ion-col col-12 col-sm-6>
+					<img src="http://rutadeltardeoalicante.es/wp-content/uploads/2017/05/patrocinadoresFaldonBN23.jpg" float-left>
+				</ion-col>
+				<ion-col col-12 col-sm-6>
+					<p id="copyright">Diseño y desarrollo:  <a href="http://www.concaymarzal.com" title="Conca y Marzal" target="_blank">Conca&amp;Marzal</a></p>
+				</ion-col>
+		    </ion-row>
+	  	</ion-grid>			
+	</footer>
+
+</ion-content>
