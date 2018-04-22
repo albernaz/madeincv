@@ -15,7 +15,11 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-
+#logo {
+	margin-top: 12px;
+	width:60%;
+}
+	
 footer {
 	font-family: 'PT Sans', Helvetica, Arial, Lucida, sans-serif;
 }
