@@ -25,44 +25,63 @@ export class HomePage {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad');
+  ionViewDidLoad(): void {
     this.loadMap();
   }
 
-  loadMap() {
+  loadMap(): void {
     this.map = GoogleMaps.create('map_canvas');
 
     this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
       this.mapReady = true;
       const data = [
         {
-          position: {lng: -122.1180187, lat: 37.3960513},
-          title: "Ardis G Egan Intermediate School"
+          position: {lng: -0.4838606, lat: 38.351894},
+          title: "El Bigotes"
         },
         {
-          position: {lng: -122.1102408, lat: 37.3943847},
-          title: "Portola School"
+          position: {lng: -0.489376, lat: 38.346735},
+          title: "El Merengue"
         },
         {
-          position: {lng: -122.0848257, lat: 37.3818032},
-          title: "Isaac Newton Graham Middle School"
+          position: {lng: -0.49062, lat: 38.346551},
+          title: "Mercado Provenzal"
         },
         {
-          position: {lng: -122.1082962, lat: 37.3863294},
-          title: "Los Altos High School"
+          position: {lng: -0.489241, lat: 38.3436435},
+          title: "Barra degustación (Gourmet Experience)"
         },
         {
-          position: {lng: -122.013571, lat: 37.3874409},
-          title: "The Kings Academy"
+          position: {lng: -0.4920331, lat: 38.3442609},
+          title: "Cervecería Portabella Restaurante"
         },
         {
-          position: {lng: -122.082462, lat: 37.3627189},
-          title: "Georgina P Blach Intermediate School"
+          position: {lng: -0.4913491, lat: 38.3411614},
+          title: "Mio GastroBar"
         },
         {
-          position: {lng: -122.0421832, lat: 37.3766077},
-          title: "Benner Junior High School"
+          position: {lng: -0.4929773, lat: 38.3449794},
+          title: "Delta Gourmet"
+        },
+        {
+          position: {lng: -0.4916922, lat: 38.3418956},
+          title: "Delta 3"
+        },
+        {
+          position: {lng: -0.4889145, lat: 38.3421897},
+          title: "Restaurante Dhammas"
+        },
+        {
+          position: {lng: -0.491496, lat: 38.3448946},
+          title: "Taberna Chapeau"
+        },
+        {
+          position: {lng: -0.4850473, lat: 38.3463385},
+          title: "Brunch"
+        },
+        {
+          position: {lng: -0.4909713, lat: 38.3447294},
+          title: "I Ruta de Tapas MadeInCV"
         }
       ];
 
