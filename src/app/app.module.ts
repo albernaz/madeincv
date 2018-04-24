@@ -8,7 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { CollaboratorsPage } from '../pages/collaborators/collaborators';
 import { ContactPage } from '../pages/contact/contact';
 
-import { Autosize } from '../directives/autosize/autosize';
+// import { Autosize } from '../directives/autosize/autosize';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +23,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     ListPage,
     CollaboratorsPage,
     ContactPage,
-    Autosize
+    // Autosize
   ],
   imports: [
     BrowserModule,

@@ -6,11 +6,11 @@ import {
   GoogleMapsEvent,
   Marker,
   GoogleMapsAnimation,
-  MyLocation,
+  // MyLocation,
   BaseArrayClass
 } from '@ionic-native/google-maps';
 
-import { Geolocation } from '@ionic-native/geolocation';
+// import { Geolocation } from '@ionic-native/geolocation';
 
 @Component({
   selector: 'page-home',
@@ -21,7 +21,7 @@ export class HomePage {
   map: GoogleMap;
   mapReady: boolean = false;
 
-  constructor(public navCtrl: NavController, private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController) {
 
   }
 
@@ -30,11 +30,40 @@ export class HomePage {
   }
 
   loadMap(): void {
-    this.map = GoogleMaps.create('map_canvas');
+    this.map = GoogleMaps.create('map_canvas', {
+      camera: {
+        target: {
+          lat: 38.3431352,
+          lng: -0.4849664
+        },
+        zoom: 16,
+        tilt: 45
+      }
+    });
 
     this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
       this.mapReady = true;
       const data = [
+        {
+          position: {lng: -0.489579, lat: 38.360945},
+          title: "Taberna la Vendimia"
+        },
+        {
+          position: {lng: -0.5083549, lat: 38.3377359},
+          title: "La Bodeguita de Juan"
+        },
+        {
+          position: {lng: -0.503783, lat: 38.3491619},
+          title: "Cervecería Tapería Nueva Villateresa"
+        },
+        {
+          position: {lng: -0.5061937, lat: 38.3453283},
+          title: "Cervecería Chacolí"
+        },
+        {
+          position: {lng: -0.4907852, lat: 38.3478094},
+          title: "Hotel Leuka"
+        },
         {
           position: {lng: -0.4838606, lat: 38.351894},
           title: "El Bigotes"
@@ -88,16 +117,17 @@ export class HomePage {
       // Add markers
       let baseArray: BaseArrayClass<any> = new BaseArrayClass<any>(data);
 
-      baseArray.mapAsync((mOption: any, callback: (marker: Marker) => void) => {
-        this.map.addMarker(mOption).then(callback);
+      baseArray.mapAsync((options: any, next: (marker: Marker) => void) => {
+        this.map.addMarker(options).then(next);
       }).then((markers: Marker[]) => {
           // Set a camera position that includes all markers.
-          let bounds = [];
+          let bounds: any[] = [];
           data.forEach((POI) => {
             bounds.push(POI.position);
           });
 
-          this.map.moveCamera({target: bounds}).then(() => {
+          this.map.moveCamera({target: bounds, tilt: 45}).then(() => {
+              markers[markers.length - 1].setAnimation(GoogleMapsAnimation.BOUNCE);
               // After camera moves open the last marker.
               markers[markers.length - 1].showInfoWindow();
           });

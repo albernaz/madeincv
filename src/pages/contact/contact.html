@@ -8,25 +8,32 @@
 
 
 <ion-content padding>
+	<h3>Contacto</h3>
 	<form [formGroup]="contact" (ngSubmit)="doSubmit()">
 		<ion-list>
 			<ion-item>
-				<ion-label color="primary" floating>Su Nombre</ion-label>
-				<ion-input formControlName="name"></ion-input>
+				<ion-input type="text" formControlName="name" placeholder="Su Nombre (requerido)" clearInput></ion-input>
 			</ion-item>
+			<ion-item *ngIf="!contact.controls.name.valid && (contact.controls.name.dirty || contact.controls.name.touched)">
+                <p ion-text color="danger" *ngIf="contact.controls.name.errors.required">Nombre es obligatorio.</p>
+            </ion-item>
 			<ion-item>
-				<ion-label color="primary" floating>Su e-mail</ion-label>
-				<ion-input formControlName="email"></ion-input>
+				<ion-input type="email" formControlName="email" placeholder="Su e-mail (requerido)" clearInput></ion-input>
 			</ion-item>
+			<ion-item *ngIf="!contact.controls.email.valid && (contact.controls.email.dirty || contact.controls.email.touched)">
+                <p ion-text color="danger" *ngIf="contact.controls.email.errors.required">La dirección e-mail parece inválida.</p>
+            </ion-item>
 			<ion-item>
-				<ion-label color="primary" floating>Assunto</ion-label>
-				<ion-input formControlName="subject"></ion-input>
+				<ion-input type="text" formControlName="subject" placeholder="Asunto (requerido)" clearInput></ion-input>
 			</ion-item>
+			<ion-item *ngIf="!contact.controls.subject.valid && (contact.controls.subject.dirty || contact.controls.subject.touched)">
+                <p ion-text color="danger" *ngIf="contact.controls.subject.errors.required">Asunto es obligatorio.</p>
+            </ion-item>
 			<ion-item>
 	    		<ion-textarea formControlName="message" placeholder="Su mensaje"></ion-textarea>
 	  		</ion-item>
 	  		<ion-item>
-	  			<button ion-button outline type="submit" [disabled]="!contact.valid">Enviar</button>
+	  			<button ion-button outline type="submit" id="submit" [disabled]="!contact.valid">Enviar</button>
 	  		</ion-item>
 		</ion-list>
 	</form>

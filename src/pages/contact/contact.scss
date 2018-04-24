@@ -16,4 +16,19 @@ page-contact {
 	    text-decoration: none;
 	}
 
+	ion-input, ion-textarea {
+	    background-color: #f2f2f2;
+	    color: #7d7d7d;
+	    padding: 1em;
+	    margin-top: 0.6em;
+	}
+
+	#submit {
+		padding: 2em;
+	}
+
+	#submit:hover {
+	    background: #fcea0f;
+	}	
+
 }

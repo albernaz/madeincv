@@ -24,6 +24,8 @@ $app-direction: ltr;
 
 $toolbar-background: #ea5242;
 
+$text-input-highlight-color-valid: #06a996;
+
 
 
 
@@ -38,6 +40,7 @@ $toolbar-background: #ea5242;
 $colors: (
   primary:    #ea5242,
   secondary:  #06a992,
+  tertiary:   #fcea0f,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
